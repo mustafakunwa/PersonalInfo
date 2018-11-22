@@ -1,0 +1,90 @@
+﻿<style>
+    .tabsdemoDynamicHeight md-content {
+        background-color: transparent !important;
+    }
+
+        .tabsdemoDynamicHeight md-content md-tabs {
+            background: #f6f6f6;
+            border: 1px solid #e1e1e1;
+        }
+
+            .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+                background: white;
+            }
+
+        .tabsdemoDynamicHeight md-content h1:first-child {
+            margin-top: 0;
+        }
+</style>
+<div ng-cloak>
+    <md-content>
+        <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom>
+            <md-tab label="Personal" ng-click="Add()">
+                <md-content class="md-padding">
+                    <form name="InfoForm">
+                        <div layout="row" layout-xs="column">
+                            <md-input-container flex="30">
+                                <label>Name</label>
+                                <input type="text" id="Name" name="Name" ng-model="Personalinfo.Name" required />
+                                <div ng-messages="InfoForm.Name.$error">
+                                    <div ng-message="required">Name is required.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout="row" layout-xs="column">
+                            <md-input-container flex="30">
+                                <label>Email</label>
+                                <input type="email" id="Email" name="Email" ng-model="Personalinfo.Email" required />
+                                <div ng-messages="InfoForm.Email.$error">
+                                    <div ng-message="required">Email is required.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout="row" layout-xs="column">
+                            <md-input-container flex="100">
+                                <label>Facebook Profile</label>
+                                <input type="text" id="Facebook" name="Facebook" ng-model="Personalinfo.Facebook" />
+                            </md-input-container>
+                            <md-input-container flex="100">
+                                <label>Twitter Profile</label>
+                                <input type="text" id="Twitter" name="Twitter" ng-model="Personalinfo.Twitter" />
+                            </md-input-container>
+                            <md-input-container flex="100">
+                                <label>Linkedin Profile</label>
+                                <input type="text" id="Linkedin" name="Linkedin" ng-model="Personalinfo.Linkedin" />
+                            </md-input-container>
+                        </div>
+                        <div class="text-right">
+                            <md-button type="button" class="md-primary md-raised" ng-disabled="InfoForm.$invalid" ng-click="Save()">Save</md-button>
+                            <md-button type="button" class="md-primary md-raised" ng-click="Clear()">Clear</md-button>
+                            <md-button type="button" class="md-primary md-raised" ng-click="Next()">Next</md-button>
+                        </div>
+                    </form>
+                </md-content>
+            </md-tab>
+            <md-tab label="List" ng-click="Next()">
+                <md-content class="md-padding">
+                    <md-list flex>
+                        <md-list-item class="md-3-line col-md-4" ng-repeat="list in List" style="border:groove;border-radius:10px">
+                            <img ng-src="../../../img/Profile.jpg" class="md-avatar" alt="{{item.Name}}" />
+                            <div class="md-list-item-text" layout="column">
+                                <h3>{{list.Name}}</h3>
+                                <h4>{{list.Email}}</h4>
+                                <p style="font-size:5px">
+                                    <md-button type="button" class="md-primary" ng-click="Edit(list.Id)">Edit</md-button>
+                                    <md-button type="button" class="md-primary" ng-click="Delete(list.Id)">Delete</md-button>
+                                </p>
+                            </div>
+                        </md-list-item>
+                        <md-list-item class="md-3-line col-md-4" ng-click="Add()" style="border:groove;border-radius:10px">
+                            <div class="md-list-item-text text-center" layout="column">
+                                <md-icon md-svg-src="../../../img/plus.svg" aria-label="android "></md-icon>
+                                Add Family Member
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>
