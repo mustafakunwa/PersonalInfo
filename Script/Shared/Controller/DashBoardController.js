@@ -56,6 +56,7 @@ myapp.service('DashboardServive', function () {
 
     var Info = [
         {
+            Id:1,
             Name: 'Mustafa',
             Email: 'm.kunwa52@gmail.com',
             Facebook: 'https://www.facebook.com/mustafakunwa',
@@ -63,6 +64,7 @@ myapp.service('DashboardServive', function () {
             Linkedin: 'https://www.linkedin.com'
         },
         {
+            Id:2,
             Name: 'Hakim',
             Email: 'Hakim.fg123@gmail.com'
         }
@@ -77,7 +79,7 @@ myapp.service('DashboardServive', function () {
 
     function Saveinfo(info) {
 
-        info.Id = Math.max.apply(Math, Info.map(function (o) { return o.Id; }))
+        info.Id = Math.max.apply(Math, Info.map(function (o) { return o.Id; })) + 1;
         Info.push(info);
     }
 
