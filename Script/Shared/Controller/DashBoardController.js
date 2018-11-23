@@ -43,7 +43,14 @@
 
         $scope.Clear = function () {
             $scope.IsEdit = false;
-            $scope.Personalinfo = {};
+            $scope.Personalinfo = {
+                Id: 0,
+                Name: '',
+                Email: '',
+                Facebook: '',
+                Twitter: '',
+                Linkedin: ''
+            };
             $scope.InfoForm.$setPristine();
             $scope.InfoForm.$setUntouched();
         };
