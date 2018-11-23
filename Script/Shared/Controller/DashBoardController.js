@@ -58,9 +58,9 @@ myapp.service('DashboardServive', function () {
         {
             Name: 'Mustafa',
             Email: 'm.kunwa52@gmail.com',
-            Facebook: 'www.facebook.com/mustafakunwa',
-            Twitter: 'www.twitter.com',
-            Linkedin: 'www.linkedin.com'
+            Facebook: 'https://www.facebook.com/mustafakunwa',
+            Twitter: 'https://www.twitter.com',
+            Linkedin: 'https://www.linkedin.com'
         },
         {
             Name: 'Hakim',
