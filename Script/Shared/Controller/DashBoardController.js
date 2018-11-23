@@ -64,7 +64,7 @@ myapp.service('DashboardServive', function () {
         },
         {
             Name: 'Hakim',
-            Email: 'Hakim.fg@gmail.com'
+            Email: 'Hakim.fg123@gmail.com'
         }
     ];
     return {
